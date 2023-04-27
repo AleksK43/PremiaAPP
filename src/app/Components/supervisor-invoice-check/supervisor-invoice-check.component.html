@@ -1,0 +1,45 @@
+<div class="h-screen flex flex-col">
+    <div class="h-1/2 flex flex-row">
+      <div class="w-1/2 flex-grow-0 bg-gray-200">
+        <h2 class ="text-center"> Repozytorium Dokumetnow - Pozycje uzytkowika ujete premia</h2>
+        <app-invoice-checker></app-invoice-checker>      
+    </div>
+      <div class="w-1/2 flex-grow-0 bg-gray-400">
+        <div class="space-y-4">
+            <details class="group [&_summary::-webkit-details-marker]:hidden" open>
+              <summary
+                class="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900 dark:bg-gray-900 dark:text-white"
+              >
+                <h2 class="font-medium">Dodaj Komentarz Do wniosku </h2>
+          
+                <svg
+                  class="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+          
+              <p class="mt-4 px-4 leading-relaxed text-gray-700">
+                <textarea class="flex w-full"> </textarea>
+            </p>
+            </details>
+            <button class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-green-600 dark:bg-green-600 dark:text-green-100 hover:bg-green-500 hover:text-black">Akceptuj Wniosek </button> 
+            <button class="whitespace-nowrap rounded-full bg-red-100 px-2.5 py-0.5 text-xs text-red-600 dark:bg-red-600 dark:text-green-100 hover:bg-red-500 hover:text-black">Odrzuć Wniosek </button> 
+
+          </div>
+      </div>
+    </div>
+    <div class="h-1/2 flex-grow-1 bg-gray-100">
+        <h2 class ="text-center"> Wniosek Uzytkownika  </h2>
+        <app-invoice-repository> </app-invoice-repository>
+    </div>
+  </div>

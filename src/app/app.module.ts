@@ -10,11 +10,16 @@ import { UserProjectsComponent } from './Components/user-projects/user-projects.
 import { PageNotFoundComponent } from "./Components/page-not-found/page-not-found.component";
 import { AppRoutingModule } from './app-routing.module';
 import { BasicUserViewComponent } from './Components/basic-user-view/basic-user-view.component';
+import { SupervisorViewComponent } from './Components/supervisor-view/supervisor-view.component';
+import { UserActiveBonusComponent } from './Components/user-active-bonus/user-active-bonus.component';
+import { SupervisorInvoiceCheckComponent } from './Components/supervisor-invoice-check/supervisor-invoice-check.component';
+import { InvoiceRepositoryComponent } from './Components/invoice-repository/invoice-repository.component';
+import { InvoiceCheckerComponent } from './Components/invoice-checker/invoice-checker.component';
 
 
 @NgModule(
     {
-        declarations: [AppComponent, LoginComponent, UserGridComponent, AddInvoiceFormComponent, InvoiceBonusTableComponent, UserProfitComponent, UserProjectsComponent, PageNotFoundComponent, BasicUserViewComponent], 
+        declarations: [AppComponent, LoginComponent, UserGridComponent, AddInvoiceFormComponent, InvoiceBonusTableComponent, UserProfitComponent, UserProjectsComponent, PageNotFoundComponent, BasicUserViewComponent, SupervisorViewComponent, UserActiveBonusComponent, SupervisorInvoiceCheckComponent, InvoiceRepositoryComponent, InvoiceCheckerComponent], 
         imports: [BrowserModule, AppRoutingModule],
         bootstrap: [AppComponent],
     }
