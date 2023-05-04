@@ -18,7 +18,6 @@ const routes: Routes = [
   { path: 'SupervisorView', component: SupervisorViewComponent },
   { path: 'InvoiceCheck', component: SupervisorInvoiceCheckComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}
 
 ];
