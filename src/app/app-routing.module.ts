@@ -9,6 +9,7 @@ import { BasicUserViewComponent } from './Components/basic-user-view/basic-user-
 import { AddInvoiceFormComponent } from './Components/add-invoice-form/add-invoice-form.component';
 import { SupervisorViewComponent } from './Components/supervisor-view/supervisor-view.component';
 import { SupervisorInvoiceCheckComponent } from './Components/supervisor-invoice-check/supervisor-invoice-check.component';
+import { SuperUserViewComponent } from './Components/super-user-view/super-user-view.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'AddInvoice', component: AddInvoiceFormComponent },
   { path: 'SupervisorView', component: SupervisorViewComponent },
   { path: 'InvoiceCheck', component: SupervisorInvoiceCheckComponent },
+  { path: 'SuperUserView', component: SuperUserViewComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}
 

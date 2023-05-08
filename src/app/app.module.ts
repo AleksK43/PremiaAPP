@@ -15,11 +15,12 @@ import { UserActiveBonusComponent } from './Components/user-active-bonus/user-ac
 import { SupervisorInvoiceCheckComponent } from './Components/supervisor-invoice-check/supervisor-invoice-check.component';
 import { InvoiceRepositoryComponent } from './Components/invoice-repository/invoice-repository.component';
 import { InvoiceCheckerComponent } from './Components/invoice-checker/invoice-checker.component';
+import { SuperUserViewComponent } from './Components/super-user-view/super-user-view.component';
 
 
 @NgModule(
     {
-        declarations: [AppComponent, LoginComponent, UserGridComponent, AddInvoiceFormComponent, InvoiceBonusTableComponent, UserProfitComponent, UserProjectsComponent, PageNotFoundComponent, BasicUserViewComponent, SupervisorViewComponent, UserActiveBonusComponent, SupervisorInvoiceCheckComponent, InvoiceRepositoryComponent, InvoiceCheckerComponent], 
+        declarations: [AppComponent, LoginComponent, UserGridComponent, AddInvoiceFormComponent, InvoiceBonusTableComponent, UserProfitComponent, UserProjectsComponent, PageNotFoundComponent, BasicUserViewComponent, SupervisorViewComponent, UserActiveBonusComponent, SupervisorInvoiceCheckComponent, InvoiceRepositoryComponent, InvoiceCheckerComponent, SuperUserViewComponent], 
         imports: [BrowserModule, AppRoutingModule],
         bootstrap: [AppComponent],
     }
