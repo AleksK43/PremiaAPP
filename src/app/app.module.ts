@@ -16,12 +16,13 @@ import { SupervisorInvoiceCheckComponent } from './Components/supervisor-invoice
 import { InvoiceRepositoryComponent } from './Components/invoice-repository/invoice-repository.component';
 import { InvoiceCheckerComponent } from './Components/invoice-checker/invoice-checker.component';
 import { SuperUserViewComponent } from './Components/super-user-view/super-user-view.component';
-
+import { SuperUserUserGridComponent } from './Components/super-user-user-grid/super-user-user-grid.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule(
     {
-        declarations: [AppComponent, LoginComponent, UserGridComponent, AddInvoiceFormComponent, InvoiceBonusTableComponent, UserProfitComponent, UserProjectsComponent, PageNotFoundComponent, BasicUserViewComponent, SupervisorViewComponent, UserActiveBonusComponent, SupervisorInvoiceCheckComponent, InvoiceRepositoryComponent, InvoiceCheckerComponent, SuperUserViewComponent], 
-        imports: [BrowserModule, AppRoutingModule],
+        declarations: [AppComponent, LoginComponent, UserGridComponent, AddInvoiceFormComponent, InvoiceBonusTableComponent, UserProfitComponent, UserProjectsComponent, PageNotFoundComponent, BasicUserViewComponent, SupervisorViewComponent, UserActiveBonusComponent, SupervisorInvoiceCheckComponent, InvoiceRepositoryComponent, InvoiceCheckerComponent, SuperUserViewComponent, SuperUserUserGridComponent], 
+        imports: [BrowserModule, AppRoutingModule, HttpClientModule],
         bootstrap: [AppComponent],
     }
 )
