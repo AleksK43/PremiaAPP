@@ -48,22 +48,22 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                        <tr *ngFor="let user of Users" class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <tr *ngFor="let user of users" class="hover:bg-gray-100 dark:hover:bg-gray-700">
                             <td class="p-4 w-4">
                                 <div class="flex items-center">
                                     <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                     <label for="checkbox-table-1" class="sr-only">checkbox</label>
                                 </div>
                             </td>
-                            <td class="py-4 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.guid}}</td>
-                            <td class="py-4 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.UserName}}</td>
-                            <td class="py-4 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.UserSurname}}</td>
-                            <td class="py-4 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.Email}}</td>
-                            <td class="py-4 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.IsDeleted}}</td>
-                            <td class="py-4 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.CreateDate | date: 'shortDate'}}</td>
-                            <td class="py-4 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.DeleteDate | date: 'shortDate'}}</td>
-                            <td class="py-4 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.IsSuperUser}}</td>
-                            <td class="py-4 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.IsSuperVisor}}</td>
+                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.guid}}</td>
+                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.UserName}}</td>
+                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.UserSurname}}</td>
+                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.Email}}</td>
+                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.IsDeleted}}</td>
+                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.CreateDate | date: 'shortDate'}}</td>
+                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.DeleteDate | date: 'shortDate'}}</td>
+                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.IsSuperUser}}</td>
+                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.IsSuperVisor}}</td>
 
                             <td class="py-4 px-6 text-sm font-medium text-left whitespace-nowrap">
                             <a href="#" class="text-gray-700 dark:text-gray-200 hover:underline">Edytuj</a>

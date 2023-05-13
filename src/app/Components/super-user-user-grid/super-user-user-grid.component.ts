@@ -8,11 +8,14 @@ import { UsersService } from 'src/app/Services/users.service';
   styleUrls: ['./super-user-user-grid.component.css']
 })
 export class SuperUserUserGridComponent {
-  Users: Users[] = []; 
+  title = "User.UI "
+  users: Users[] = []; 
   
   constructor(private usersService: UsersService) {} 
 
-ngOnInit(): void {
-this.usersService.getUsers().subscribe((result: Users[])=> this.Users = result);
-}
+  ngOnInit(): void {
+    this.usersService.
+    getUsers()
+    .subscribe((result: Users[]) => (this.users = result));
+  }
 }

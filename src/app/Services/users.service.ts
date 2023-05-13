@@ -14,6 +14,6 @@ private url = "User";
   public getUsers(): Observable<Users[]>
   {
    
-     return this.http.get<Users[]>('${environment.apiUrl}/${this.url}')
+    return this.http.get<Users[]>(`${environment.apiUrl}/${this.url}`);
   }
 }
