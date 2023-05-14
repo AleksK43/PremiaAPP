@@ -1,12 +1,12 @@
 export class Users{
-    guid: string | undefined; 
-    UserName:string | undefined; 
-    UserSurname :string | undefined; 
-    Email :string | undefined; 
-    IsDeleted: boolean | undefined;
-    CreateDate: Date | undefined; 
-    DeleteDate: Date | undefined; 
-    IsSuperUser:boolean | undefined; 
-    IsSuperVisor:boolean | undefined; 
-    IsNormalUser:boolean | undefined; 
+    id: string | undefined; 
+    userName:string | undefined; 
+    userSurname :string | undefined; 
+    email :string | undefined; 
+    isDeleted: boolean | undefined;
+    createDate: Date | undefined; 
+    deleteDate: Date | undefined; 
+    isSuperUser:boolean | undefined; 
+    isSupervisor:boolean | undefined; 
+    isNormalUser:boolean | undefined; 
 }

@@ -18,10 +18,12 @@ import { InvoiceCheckerComponent } from './Components/invoice-checker/invoice-ch
 import { SuperUserViewComponent } from './Components/super-user-view/super-user-view.component';
 import { SuperUserUserGridComponent } from './Components/super-user-user-grid/super-user-user-grid.component';
 import { HttpClientModule } from "@angular/common/http";
+import { AdminUserEditComponent } from './Components/admin-user-edit/admin-user-edit.component';
+import { DocumentsRepositoryComponent } from './Components/documents-repository/documents-repository.component';
 
 @NgModule(
     {
-        declarations: [AppComponent, LoginComponent, UserGridComponent, AddInvoiceFormComponent, InvoiceBonusTableComponent, UserProfitComponent, UserProjectsComponent, PageNotFoundComponent, BasicUserViewComponent, SupervisorViewComponent, UserActiveBonusComponent, SupervisorInvoiceCheckComponent, InvoiceRepositoryComponent, InvoiceCheckerComponent, SuperUserViewComponent, SuperUserUserGridComponent], 
+        declarations: [AppComponent, LoginComponent, UserGridComponent, AddInvoiceFormComponent, InvoiceBonusTableComponent, UserProfitComponent, UserProjectsComponent, PageNotFoundComponent, BasicUserViewComponent, SupervisorViewComponent, UserActiveBonusComponent, SupervisorInvoiceCheckComponent, InvoiceRepositoryComponent, InvoiceCheckerComponent, SuperUserViewComponent, SuperUserUserGridComponent, AdminUserEditComponent, DocumentsRepositoryComponent], 
         imports: [BrowserModule, AppRoutingModule, HttpClientModule],
         bootstrap: [AppComponent],
     }

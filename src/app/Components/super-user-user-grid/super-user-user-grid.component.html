@@ -55,18 +55,18 @@
                                     <label for="checkbox-table-1" class="sr-only">checkbox</label>
                                 </div>
                             </td>
-                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.guid}}</td>
-                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.UserName}}</td>
-                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.UserSurname}}</td>
-                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.Email}}</td>
-                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.IsDeleted}}</td>
-                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.CreateDate | date: 'shortDate'}}</td>
-                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.DeleteDate | date: 'shortDate'}}</td>
-                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.IsSuperUser}}</td>
-                            <td class="py-4 text-gray-700 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.IsSuperVisor}}</td>
+                            <td class="py-4 text-gray-300 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.id }}</td>
+                            <td class="py-4 text-gray-300 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.userName}}</td>
+                            <td class="py-4 text-gray-300 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.userSurname}}</td>
+                            <td class="py-4 text-gray-300 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.email}}</td>
+                            <td class="py-4 text-gray-300 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.isDeleted}}</td>
+                            <td class="py-4 text-gray-300 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.createDate | date: 'shortDate'}}</td>
+                            <td class="py-4 text-gray-300 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.deleteDate | date: 'shortDate'}}</td>
+                            <td class="py-4 text-gray-300 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.isSuperUser}}</td>
+                            <td class="py-4 text-gray-300 px-6 text-sm font-medium text-left whitespace-nowrap">{{user.isSupervisor}}</td>
 
                             <td class="py-4 px-6 text-sm font-medium text-left whitespace-nowrap">
-                            <a href="#" class="text-gray-700 dark:text-gray-200 hover:underline">Edytuj</a>
+                            <button (click)="RedirectToEditUser()" class="bg-slate-800 hover:bg-gray-400 text-white hover:text-white font-bold py-2 px-4">Edytuj</button>
                             </td>
                         </tr>           
                     </tbody>

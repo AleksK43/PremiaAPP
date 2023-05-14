@@ -10,6 +10,8 @@ import { AddInvoiceFormComponent } from './Components/add-invoice-form/add-invoi
 import { SupervisorViewComponent } from './Components/supervisor-view/supervisor-view.component';
 import { SupervisorInvoiceCheckComponent } from './Components/supervisor-invoice-check/supervisor-invoice-check.component';
 import { SuperUserViewComponent } from './Components/super-user-view/super-user-view.component';
+import { AdminUserEditComponent } from './Components/admin-user-edit/admin-user-edit.component';
+import { DocumentsRepositoryComponent } from './Components/documents-repository/documents-repository.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,6 +21,8 @@ const routes: Routes = [
   { path: 'SupervisorView', component: SupervisorViewComponent },
   { path: 'InvoiceCheck', component: SupervisorInvoiceCheckComponent },
   { path: 'SuperUserView', component: SuperUserViewComponent },
+  { path: 'UserEdit', component: AdminUserEditComponent },
+  { path: 'Repository', component: DocumentsRepositoryComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}
 
