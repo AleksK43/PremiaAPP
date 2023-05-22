@@ -21,6 +21,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AdminUserEditComponent } from './Components/admin-user-edit/admin-user-edit.component';
 import { DocumentsRepositoryComponent } from './Components/documents-repository/documents-repository.component';
 
+
 @NgModule(
     {
         declarations: [AppComponent, LoginComponent, UserGridComponent, AddInvoiceFormComponent, InvoiceBonusTableComponent, UserProfitComponent, UserProjectsComponent, PageNotFoundComponent, BasicUserViewComponent, SupervisorViewComponent, UserActiveBonusComponent, SupervisorInvoiceCheckComponent, InvoiceRepositoryComponent, InvoiceCheckerComponent, SuperUserViewComponent, SuperUserUserGridComponent, AdminUserEditComponent, DocumentsRepositoryComponent], 

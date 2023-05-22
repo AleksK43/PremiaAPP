@@ -21,3 +21,4 @@ describe('DocumentsRepositoryComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
