@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from "@angular/platform-browser";
 import { LoginComponent } from './Components/login/login.component';
 import { UserGridComponent } from './Components/user-grid/user-grid.component';
@@ -24,8 +25,25 @@ import { DocumentsRepositoryComponent } from './Components/documents-repository/
 
 @NgModule(
     {
-        declarations: [AppComponent, LoginComponent, UserGridComponent, AddInvoiceFormComponent, InvoiceBonusTableComponent, UserProfitComponent, UserProjectsComponent, PageNotFoundComponent, BasicUserViewComponent, SupervisorViewComponent, UserActiveBonusComponent, SupervisorInvoiceCheckComponent, InvoiceRepositoryComponent, InvoiceCheckerComponent, SuperUserViewComponent, SuperUserUserGridComponent, AdminUserEditComponent, DocumentsRepositoryComponent], 
-        imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+        declarations: [AppComponent,
+             LoginComponent,
+             UserGridComponent,
+             AddInvoiceFormComponent, 
+             InvoiceBonusTableComponent, 
+             UserProfitComponent, 
+             UserProjectsComponent, 
+             PageNotFoundComponent, 
+             BasicUserViewComponent, 
+             SupervisorViewComponent, 
+             UserActiveBonusComponent, 
+             SupervisorInvoiceCheckComponent, 
+             InvoiceRepositoryComponent, 
+             InvoiceCheckerComponent, 
+             SuperUserViewComponent, 
+             SuperUserUserGridComponent, 
+             AdminUserEditComponent, 
+             DocumentsRepositoryComponent], 
+        imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule,ReactiveFormsModule],
         bootstrap: [AppComponent],
     }
 )
