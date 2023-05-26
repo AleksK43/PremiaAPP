@@ -21,7 +21,7 @@ import { SuperUserUserGridComponent } from './Components/super-user-user-grid/su
 import { HttpClientModule } from "@angular/common/http";
 import { AdminUserEditComponent } from './Components/admin-user-edit/admin-user-edit.component';
 import { DocumentsRepositoryComponent } from './Components/documents-repository/documents-repository.component';
-
+import { NgToastModule } from 'ng-angular-popup'; 
 
 @NgModule(
     {
@@ -43,7 +43,7 @@ import { DocumentsRepositoryComponent } from './Components/documents-repository/
              SuperUserUserGridComponent, 
              AdminUserEditComponent, 
              DocumentsRepositoryComponent], 
-        imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule,ReactiveFormsModule],
+        imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule,ReactiveFormsModule,NgToastModule],
         bootstrap: [AppComponent],
     }
 )

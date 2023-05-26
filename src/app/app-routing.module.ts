@@ -12,10 +12,11 @@ import { SupervisorInvoiceCheckComponent } from './Components/supervisor-invoice
 import { SuperUserViewComponent } from './Components/super-user-view/super-user-view.component';
 import { AdminUserEditComponent } from './Components/admin-user-edit/admin-user-edit.component';
 import { DocumentsRepositoryComponent } from './Components/documents-repository/documents-repository.component';
+import { AuthGuard } from './Guards/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'UserGrid', component: UserGridComponent },
+  { path: 'UserGrid', component: UserGridComponent, canActivate:[AuthGuard] },
   { path: 'UserView', component: BasicUserViewComponent},
   { path: 'AddInvoice', component: AddInvoiceFormComponent },
   { path: 'SupervisorView', component: SupervisorViewComponent },

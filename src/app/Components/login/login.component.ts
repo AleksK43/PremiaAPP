@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   isText: boolean = false;
   loginForm!: FormGroup;
 
-  constructor(private router: Router, private auth: AuthService, private fb: FormBuilder) {}
+  constructor(private router: Router, private auth: AuthService, private fb: FormBuilder,private toast: NgToastService) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -24,8 +25,17 @@ export class LoginComponent implements OnInit {
 
   onLogin(): void {
     if (this.loginForm.valid) {
-     // this.router.navigate(['UserView']);
-    console.log(this.loginForm.value)
+     this.auth.login(this.loginForm.value)
+     .subscribe({
+      next:(res)=> {
+        this.toast.success({detail:"Login SUCCESS", summary: "Gratulacje kierowniku", duration: 5000});
+        this.loginForm.reset();
+        this.auth.storeToken(res.token);
+      },
+      error:(err)=>{
+        this.toast.error({detail:"Kierowniku nie tędy droga", duration: 5000})
+      }
+     })
     }
      else {
       // Obsłuż przypadek, gdy formularz jest nieprawidłowy
