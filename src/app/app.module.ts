@@ -43,7 +43,12 @@ import { NgToastModule } from 'ng-angular-popup';
              SuperUserUserGridComponent, 
              AdminUserEditComponent, 
              DocumentsRepositoryComponent], 
-        imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule,ReactiveFormsModule,NgToastModule],
+        imports: [BrowserModule,
+            AppRoutingModule,
+            HttpClientModule,
+            FormsModule,
+            ReactiveFormsModule,
+            NgToastModule],
         bootstrap: [AppComponent],
     }
 )

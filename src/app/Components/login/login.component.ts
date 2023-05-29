@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
         this.toast.success({detail:"Login SUCCESS", summary: "Gratulacje kierowniku", duration: 5000});
         this.loginForm.reset();
         this.auth.storeToken(res.token);
+        this.router.navigate(['UserView']); 
       },
       error:(err)=>{
         this.toast.error({detail:"Kierowniku nie tędy droga", duration: 5000})
@@ -57,5 +58,7 @@ export class LoginComponent implements OnInit {
         this.validateAllFromFields(control);
       }
     });
+
+
   }
 }
