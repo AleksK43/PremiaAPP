@@ -18,10 +18,11 @@ import { InvoiceRepositoryComponent } from './Components/invoice-repository/invo
 import { InvoiceCheckerComponent } from './Components/invoice-checker/invoice-checker.component';
 import { SuperUserViewComponent } from './Components/super-user-view/super-user-view.component';
 import { SuperUserUserGridComponent } from './Components/super-user-user-grid/super-user-user-grid.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { AdminUserEditComponent } from './Components/admin-user-edit/admin-user-edit.component';
 import { DocumentsRepositoryComponent } from './Components/documents-repository/documents-repository.component';
 import { NgToastModule } from 'ng-angular-popup'; 
+import { TokenInterceptor } from "./Interceptors/token.interceptor";
 
 @NgModule(
     {
@@ -43,6 +44,11 @@ import { NgToastModule } from 'ng-angular-popup';
              SuperUserUserGridComponent, 
              AdminUserEditComponent, 
              DocumentsRepositoryComponent], 
+        providers: [{
+            provide: HTTP_INTERCEPTORS,
+            useClass: TokenInterceptor,
+            multi: true 
+        }],
         imports: [BrowserModule,
             AppRoutingModule,
             HttpClientModule,
