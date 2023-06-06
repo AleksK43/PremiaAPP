@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { AuthService } from 'src/app/Services/auth.service';
+import { UserStoreService } from 'src/app/Services/user-store.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   isText: boolean = false;
   loginForm!: FormGroup;
 
-  constructor(private router: Router, private auth: AuthService, private fb: FormBuilder,private toast: NgToastService) {}
+  constructor(private userStore: UserStoreService, private router: Router, private auth: AuthService, private fb: FormBuilder,private toast: NgToastService) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -31,6 +32,9 @@ export class LoginComponent implements OnInit {
         this.toast.success({detail:"Login SUCCESS", summary: "Gratulacje kierowniku", duration: 5000});
         this.loginForm.reset();
         this.auth.storeToken(res.token);
+        const tokenaPayload = this.auth.decodeToken();
+        this.userStore.setFullNameFromStore(tokenaPayload.unique_name);
+        this.userStore.setRoleForStore(tokenaPayload.role);
         this.router.navigate(['UserView']); 
       },
       error:(err)=>{
