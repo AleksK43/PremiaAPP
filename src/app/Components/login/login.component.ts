@@ -35,6 +35,15 @@ export class LoginComponent implements OnInit {
         const tokenaPayload = this.auth.decodeToken();
         this.userStore.setFullNameFromStore(tokenaPayload.unique_name);
         this.userStore.setRoleForStore(tokenaPayload.role);
+        if (tokenaPayload.role == "Admin")
+        {
+          this.router.navigate(['SuperUserView'])
+        }
+        else if ( tokenaPayload.role == "Supervisor")
+        {
+          this.router.navigate(['SupervisorView'])
+        } 
+        else 
         this.router.navigate(['UserView']); 
       },
       error:(err)=>{
