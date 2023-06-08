@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['SupervisorView'])
         } 
         else 
-        this.router.navigate(['UserView']); 
+        this.router.navigate(['UserView']) 
       },
       error:(err)=>{
         this.toast.error({detail:"Kierowniku nie tędy droga", duration: 5000})
