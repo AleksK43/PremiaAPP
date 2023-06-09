@@ -3,13 +3,13 @@
     class="sm:gap-3 transition-left ease-[cubic-bezier(0.4, 0.0, 0.2, 1)] delay-150 sm:flex flex flex-col cursor-pointer absolute min-h-screen -left-48 sm:static w-48 top-0 bg-white sm:shadow-none shadow-xl sm:bg-transparent sm:flex-row sm:w-auto sm:min-h-0 dark:bg-slate-900"
     [class.isOpen]="isOpen">
     <li class="font-medium text-sm p-3 hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-primary">
-      <a href="#" class="dark:text-white">Strona Główna</a>
+      <button class="dark:text-white" (click)="changeComponent('user-grid')">Strona Główna</button>
     </li>
     <li class="font-medium text-sm p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white">Repozytorium</a>
+      <button class="dark:text-white" (click)="changeComponent('Repozytorium')">Repozytorium</button>
     </li>
   </ul>
-  <div class="flex gap-3 items-center"><h1>Witaj, {{unique_name}}</h1>
+  <div class="flex gap-3 items-center"><h3 class="inline-block align-middle bg-primary text-white px-2 py-1 rounded text-gray-200 text-center">Witaj, {{unique_name}}</h3>
     <div class="h-10 w-10 hover:ring-4 user cursor-pointer relative ring-blue-700/30 rounded-full bg-cover bg-center bg-[url('https://www.aquaknect.com.au/wp-content/uploads/2019/11/person_outline-300x300.jpg')]"
       (click)="toggleMenu()">
       <div class="drop-down w-48 overflow-hidden bg-white rounded-md shadow absolute top-12 right-3"
@@ -50,13 +50,25 @@
     </div>
   </div>
 </nav>
-<div class="flex flex-col h-screen">
-  <div class="bg-gray-200 flex-grow">
+
+<ng-container *ngIf="selectedComponent === 'user-grid'">
+ <div class="flex flex-col h-screen"> 
+    <div class="bg-gray-200 flex-grow"></div>
+    <div class="bg-gray-300 flex-grow">
+      <app-user-profit></app-user-profit>
+      <app-user-grid></app-user-grid>
+    </div>
+    <div class="bg-gray-400 flex-grow"></div>
   </div>
-  <div class="bg-gray-300 flex-grow">
-    <app-user-profit></app-user-profit>
-    <app-user-grid></app-user-grid>
+</ng-container>
+
+
+<ng-container *ngIf="selectedComponent === 'Repozytorium'">
+  <div class="flex flex-col h-screen"> 
+    <div class="bg-gray-200 flex-grow"></div>
+    <div class="bg-gray-300 flex-grow">
+      <app-documents-repository></app-documents-repository>
+    </div>
+    <div class="bg-gray-400 flex-grow"></div>
   </div>
-  <div class="bg-gray-400 flex-grow">
-  </div>
-</div>
+</ng-container>

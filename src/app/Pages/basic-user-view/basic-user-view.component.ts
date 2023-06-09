@@ -12,7 +12,7 @@ import { UserStoreService } from 'src/app/Services/user-store.service';
 
 
 export class BasicUserViewComponent {
-  
+  public selectedComponent: string = "user-grid'";
   public unique_name : string = ""; 
   
   constructor(private toast: NgToastService, private auth:AuthService,private router: Router, private store: UserStoreService) {};
@@ -23,6 +23,7 @@ export class BasicUserViewComponent {
     .subscribe(val=> {
       let fullNameFromToken = this.auth.getNameFromTokejn(); 
       this.unique_name = val || fullNameFromToken
+      this.selectedComponent ="user-grid";
     })
   }
 
@@ -36,9 +37,9 @@ export class BasicUserViewComponent {
     this.toast.success({detail: "SUCCESS", summary: "Wylogowano pomyślnie", duration:5000});
     this.auth.logOut(); 
   }
-
-
-
-
+  
+  changeComponent(componentName: string) {
+    this.selectedComponent = componentName;
+  }
 
 }

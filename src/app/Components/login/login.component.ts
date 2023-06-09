@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
      this.auth.login(this.loginForm.value)
      .subscribe({
       next:(res)=> {
-        this.toast.success({detail:"Login SUCCESS", summary: "Gratulacje kierowniku", duration: 5000});
+        this.toast.success({detail:"LOGIN SUCCESS", summary: "Gratulacje kierowniku", duration: 5000});
         this.loginForm.reset();
         this.auth.storeToken(res.token);
         const tokenaPayload = this.auth.decodeToken();
