@@ -101,42 +101,19 @@
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
         />
       </div>
-      <div class="mb-5">
-        <label for="createDate" class="mb-3 block text-base font-medium text-[#07074D]">
-          Data utworzenia
-        </label>
-        <input
-          type="datetime"
-          formControlName="createDate"
-          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-        />
-      </div>
-      <div class="mb-5">
-        <label for="settlementDate" class="mb-3 block text-base font-medium text-[#07074D]">
-          Data rozliczenia
-        </label>
-        <input
-          type="datetime"
-          formControlName="settlementDate"
-          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-        />
-      </div>
-      <div class="mb-5">
-        <label for="modifyDate" class="mb-3 block text-base font-medium text-[#07074D]">
-          Data modyfikacji
-        </label>
-        <input
-          type="datetime"
-          formControlName="modifyDate"
-          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-        />
-      </div>
       <div class="flex items-center justify-center">
         <button
           type="submit"
-          class="bg-[#6A64F1] py-3 px-8 rounded-md text-white font-medium hover:bg-[#5C59E7] transition duration-300"
+          class="bg-[#6A64F1] py-3 px-8 rounded-md text-white font-medium hover:bg-[#5C59E7] transition duration-300 btn"
         >
           Dodaj dokument
+        </button>
+        <div class="mx-4"></div>
+        <button
+          (click)="RedirectToUserGrid()"
+          class="bg-[#6A64F1] py-3 px-8 rounded-md text-white font-medium hover:bg-[#5C59E7] transition duration-300 btn"
+        >
+          Wróć
         </button>
       </div>
     </form>

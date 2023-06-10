@@ -23,14 +23,16 @@ constructor(
       name: ['', Validators.required],
       // Pozostałe pola formularza i ich walidatory
     });
+    
   }
 
   addDocument() {
     if (this.documentForm.invalid) {
       return;
     }
-
+    
     const documentData = this.documentForm.value;
+    documentData.createDate = new Date(); // Aktualna data
     this.documentCreateService.addDocument(documentData).subscribe(
       response => {
         // Obsłuż odpowiedź z serwera po pomyślnym dodaniu dokumentu
