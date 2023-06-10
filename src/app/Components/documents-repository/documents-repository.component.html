@@ -1,57 +1,87 @@
-<div>
-    <p class="text-2xl text-black text-center font-bold">Twoje Dokumenty</p>
-  </div>
+<mat-table [dataSource]="dataSource">
+
+  <!-- Select Column -->
+  <ng-container matColumnDef="select">
+    <mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                    class="w-1">
+      </mat-checkbox>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row" class="text-center">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)"
+                    class="w-1">
+      </mat-checkbox>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+    <mat-cell *matCellDef="let row" class="text-center"> {{ row.position }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="customer">
+    <mat-header-cell *matHeaderCellDef> Customer </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.customer }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="invoiceNumber">
+    <mat-header-cell *matHeaderCellDef> Invoice Number </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.invoiceNumber }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="caseNumber">
+    <mat-header-cell *matHeaderCellDef> Case Number </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.caseNumber }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="income">
+    <mat-header-cell *matHeaderCellDef> Income </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.income }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="timeConsuming">
+    <mat-header-cell *matHeaderCellDef> Time Consuming </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.timeConsuming }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="drive">
+    <mat-header-cell *matHeaderCellDef> Drive </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.drive }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="month">
+    <mat-header-cell *matHeaderCellDef> Month </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.month }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="invoiceStatus">
+    <mat-header-cell *matHeaderCellDef> Invoice Status </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.invoiceStatus }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="createDate">
+    <mat-header-cell *matHeaderCellDef> Create Date </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.createDate | date: 'shortDate' }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="settlementDate">
+    <mat-header-cell *matHeaderCellDef> Settlement Date </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.settlementDate | date: 'shortDate' }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="modifyDate">
+    <mat-header-cell *matHeaderCellDef> Modify Date </mat-header-cell>
+    <mat-cell *matCellDef="let document"> {{ document.modifyDate | date: 'shortDate' }} </mat-cell>
+  </ng-container>
+
   
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
 
-<div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource">
-
-        <!-- Select Column -->
-        <ng-container matColumnDef="select">
-          <th mat-header-cell *matHeaderCellDef>
-            <mat-checkbox (change)="$event ? toggleAllRows() : null"
-                          [checked]="selection.hasValue() && isAllSelected()"
-                          [indeterminate]="selection.hasValue() && !isAllSelected()"
-                          class="w-1 h-1">
-            </mat-checkbox>
-          </th>
-          <td mat-cell *matCellDef="let row">
-            <mat-checkbox (click)="$event.stopPropagation()"
-                          (change)="$event ? selection.toggle(row) : null"
-                          [checked]="selection.isSelected(row)"
-                          class="w-1 h-1"> 
-            </mat-checkbox>
-          </td>
-        </ng-container>
-      
-        <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-        </ng-container>
-      
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-      
-
-        <ng-container matColumnDef="weight">
-          <th mat-header-cell *matHeaderCellDef> Weight </th>
-          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-        </ng-container>
-      
-        <ng-container matColumnDef="symbol">
-          <th mat-header-cell *matHeaderCellDef> Symbol </th>
-          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-        </ng-container>
-      
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-      
-      <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                     showFirstLastButtons
-                     aria-label="Select page of periodic elements">
-      </mat-paginator>
-  </div>
-  
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+</mat-paginator>

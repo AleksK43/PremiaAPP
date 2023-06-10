@@ -24,6 +24,5 @@ export class SuperUserUserGridComponent {
   RedirectToEditUser()
   {
     this.router.navigate(['UserEdit']); 
-    
   }
 }
