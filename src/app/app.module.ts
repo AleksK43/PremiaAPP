@@ -28,6 +28,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { AdminCustomerTabComponent } from './Components/Admin Components/admin-customer-tab/admin-customer-tab.component';
+import { DocumentEditComponent } from './Components/User Components/document-edit-component/document-edit-component.component';
 
 
 
@@ -48,7 +49,9 @@ import { AdminCustomerTabComponent } from './Components/Admin Components/admin-c
              SuperUserViewComponent, 
              SuperUserUserGridComponent, 
              AdminUserEditComponent, 
-             DocumentsRepositoryComponent, AdminCustomerTabComponent], 
+             DocumentsRepositoryComponent,
+             AdminCustomerTabComponent,
+             DocumentEditComponent], 
         providers: [{
             provide: HTTP_INTERCEPTORS,
             useClass: TokenInterceptor,

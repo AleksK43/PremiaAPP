@@ -1,0 +1,23 @@
+<div class="flex items-center justify-center p-12">
+    <div class="mx-auto w-full max-w-[550px]">
+      <form *ngIf="document" (ngSubmit)="save()" [formGroup]="documentForm">
+        <!-- Twoje pola formularza -->
+        <div class="flex items-center justify-center">
+          <button
+            type="submit"
+            class="bg-[#6A64F1] py-3 px-8 rounded-md text-white font-medium hover:bg-[#5C59E7] transition duration-300 btn"
+          >
+            Zaktualizuj dokument
+          </button>
+          <div class="mx-4"></div>
+          <button
+            (click)="RedirectToUserGrid()"
+            class="bg-[#6A64F1] py-3 px-8 rounded-md text-white font-medium hover:bg-[#5C59E7] transition duration-300 btn"
+          >
+            Wróć
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

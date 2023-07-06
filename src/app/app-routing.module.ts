@@ -12,6 +12,8 @@ import { SupervisorInvoiceCheckComponent } from './Components/SuperVisor Compone
 import { SuperUserViewComponent } from './Pages/super-user-view/super-user-view.component';
 import { AdminUserEditComponent } from './Components/Admin Components/admin-user-edit/admin-user-edit.component';
 import { DocumentsRepositoryComponent } from './Components/documents-repository/documents-repository.component';
+import { DocumentEditComponent } from './Components/User Components/document-edit-component/document-edit-component.component';
+
 import { AuthGuard } from './Guards/auth.guard';
 
 const routes: Routes = [
@@ -23,6 +25,7 @@ const routes: Routes = [
   { path: 'InvoiceCheck', component: SupervisorInvoiceCheckComponent },
   { path: 'SuperUserView', component: SuperUserViewComponent, canActivate:[AuthGuard] },
   { path: 'UserEdit', component: AdminUserEditComponent },
+  { path: 'DocumentEdit', component: DocumentEditComponent},
   { path: 'Repository', component: DocumentsRepositoryComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}

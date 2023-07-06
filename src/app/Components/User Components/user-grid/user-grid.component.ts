@@ -31,7 +31,9 @@ export class UserGridComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  editDocument(document: Documents): void {};
+  editDocument(document: Documents): void {
+    this.router.navigate(['DocumentEdit'], { queryParams: { id: document.id } });
+  }
 
   toggleAllRows(): void {
     if (this.isAllSelected()) {
