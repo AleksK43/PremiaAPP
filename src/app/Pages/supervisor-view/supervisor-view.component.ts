@@ -10,27 +10,43 @@ import { UserStoreService } from 'src/app/Services/user-store.service';
   styleUrls: ['./supervisor-view.component.css']
 })
 export class SupervisorViewComponent {
+  public selectedComponent: string = "supervisor-view'";
   public unique_name : string = ""; 
+  isOpen = false;
+  showSubmenu = false;
   
   constructor(private toast: NgToastService, private auth:AuthService,private router: Router, private store: UserStoreService) {};
-  isOpen: boolean = false;
   
   ngOnInit() {
     this.store.getFullNameFromStore()
     .subscribe(val=> {
       let fullNameFromToken = this.auth.getNameFromTokejn(); 
       this.unique_name = val || fullNameFromToken
+      this.selectedComponent ="supervisor-view";
+
     })
   }
 
-
   toggleMenu() {
     this.isOpen = !this.isOpen;
+  }
+
+  toggleSubmenu() {
+    this.showSubmenu = !this.showSubmenu;
+  }
+
+  closeSubmenu() {
+    this.showSubmenu = false;
   }
 
   logout(){
     this.router.navigate(['login']); 
     this.toast.success({detail: "SUCCESS", summary: "Wylogowano pomyślnie", duration:5000});
     this.auth.logOut(); 
+  }
+
+   
+  changeComponent(componentName: string) {
+    this.selectedComponent = componentName;
   }
 }

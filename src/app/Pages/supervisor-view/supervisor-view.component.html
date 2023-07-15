@@ -3,14 +3,25 @@
     class="sm:gap-3 transition-left ease-[cubic-bezier(0.4, 0.0, 0.2, 1)] delay-150 sm:flex flex flex-col cursor-pointer absolute min-h-screen -left-48 sm:static w-48 top-0 bg-white sm:shadow-none shadow-xl sm:bg-transparent sm:flex-row sm:w-auto sm:min-h-0 dark:bg-slate-900"
     [class.isOpen]="isOpen">
     <li class="font-medium text-sm p-3 hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-primary">
-      <a href="#" class="dark:text-white">Link 1</a>
+      <button class="dark:text-white" (click)="changeComponent('supervisor-view')">Strona Główna</button>
     </li>
     <li class="font-medium text-sm p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white">Link 2</a>
+      <button class="dark:text-white" (click)="changeComponent('Repozytorium')">Repozytorium</button>
     </li>
-    <li class="font-medium text-sm p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white">Link 3</a>
-    </li>
+    <li class="font-medium text-sm p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors relative">
+      <button class="dark:text-white" (click)="toggleSubmenu()">Panel Kierownika</button>
+      <ul class="transition-opacity duration-200 ease-in-out absolute left-0 w-48 mt-1 py-2 bg-white rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible" [ngClass]="{'opacity-100 visible': showSubmenu, 'opacity-0 invisible': !showSubmenu}" (mouseleave)="closeSubmenu()">
+        <li class="px-3 py-2 hover:bg-gray-200">
+          <button class="dark:text-black" (click)="changeComponent('supervisor-customer'); closeSubmenu()">Zarządzanie Klientami</button>
+        </li>
+        <li class="px-3 py-2 hover:bg-gray-200">
+          <button class="dark:text-black" (click)="changeComponent('option-2'); closeSubmenu()">Raportowanie</button>
+        </li>
+        <li class="px-3 py-2 hover:bg-gray-200">
+          <button class="dark:text-black" (click)="changeComponent('option-3'); closeSubmenu()">Tutaj według potrzeby coś dodam</button>
+        </li>
+      </ul>
+    </li>    
   </ul>
   <div class="flex gap-3 items-center"><h1 class = "text-gray-200">Witaj, {{unique_name}}</h1>
     <div class="h-10 w-10 hover:ring-4 user cursor-pointer relative ring-blue-700/30 rounded-full bg-cover bg-center bg-[url('https://www.aquaknect.com.au/wp-content/uploads/2019/11/person_outline-300x300.jpg')]"
@@ -53,14 +64,30 @@
     </div>
   </div>
 </nav>
-<div class="flex flex-col h-screen">
-  <div class="bg-gray-200 flex-grow">
-  </div>
-  <div class="bg-gray-300 flex-grow">
+
+<ng-container *ngIf="selectedComponent === 'supervisor-view'">
+  <div class="flex flex-col h-screen"> 
     <h1 class="text-3xl text-center font-bold text-gray-800"> Aktywne wnioski o premie</h1>
     <app-user-active-bonus> </app-user-active-bonus>
+  </div>
+ </ng-container>
+ 
 
+ <ng-container *ngIf="selectedComponent === 'Repozytorium'">
+   <div class="flex flex-col h-screen"> 
+     <div class="bg-gray-200 flex-grow"></div>
+     <div class="bg-gray-300 flex-grow">
+       <app-documents-repository></app-documents-repository>
+     </div>
+     <div class="bg-gray-400 flex-grow"></div>
+   </div>
+ </ng-container>
+
+ <ng-container *ngIf="selectedComponent === 'supervisor-customer'">
+  <div class="flex flex-col h-screen"> 
+    <div class="bg-gray-200 flex-grow"></div>
+    <div class="bg-gray-300 flex-grow"> 
+      <app-admin-customer-tab> </app-admin-customer-tab>   </div>
+    <div class="bg-gray-400 flex-grow"></div>
   </div>
-  <div class="bg-gray-400 flex-grow">
-  </div>
-</div>
+</ng-container>
