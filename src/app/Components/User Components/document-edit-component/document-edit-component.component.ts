@@ -11,14 +11,27 @@ import { Documents } from 'src/app/Models/documents';
 })
 export class DocumentEditComponent implements OnInit {
   document: Documents | null = null;
-  documentForm!: FormGroup;
+  documentForm: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private formBuilder: FormBuilder,
     private documentsService: DocumentsService
-  ) { }
+  ) { 
+    this.documentForm = this.formBuilder.group({
+      customer: '',
+      invoiceNumber: '',
+      type: '',
+      invoiceOwner: '',
+      caseNumber: '',
+      income: '',
+      timeConsuming: '',
+      drive: '',
+      month: '',
+      invoiceStatus: '',
+    });
+  }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -26,7 +39,7 @@ export class DocumentEditComponent implements OnInit {
       if(id){
         this.documentsService.getDocument(id).subscribe(document => {
           this.document = document;
-          this.documentForm = this.formBuilder.group({
+          this.documentForm.setValue({
             customer: this.document.customer,
             invoiceNumber: this.document.invoiceNumber,
             type: this.document.type,
@@ -44,14 +57,16 @@ export class DocumentEditComponent implements OnInit {
   }
 
   save(): void {
-    if(this.document && this.documentForm.valid){
-      this.documentsService.updateDocument(this.documentForm.value).subscribe(() => {
-        this.router.navigate(['UserGrid']);
+    if (this.document && this.document.id && this.documentForm.valid) {
+      this.documentsService.updateDocument(this.document.id, this.documentForm.value).subscribe(() => {
+        this.router.navigate(['UserView']);
       });
     }
   }
+  
 
-  RedirectToUserGrid(): void{
-    this.router.navigate(['UserGrid'])
+
+  RedirectToUserGrid(): void {
+    this.router.navigate(['UserView'])
   }
 }

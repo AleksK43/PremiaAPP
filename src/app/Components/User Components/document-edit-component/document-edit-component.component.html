@@ -1,8 +1,106 @@
 <div class="flex items-center justify-center p-12">
     <div class="mx-auto w-full max-w-[550px]">
-      <form *ngIf="document" (ngSubmit)="save()" [formGroup]="documentForm">
-        <!-- Twoje pola formularza -->
-        <div class="flex items-center justify-center">
+      <form *ngIf="documentForm" (ngSubmit)="save()" [formGroup]="documentForm">
+        <div class="mb-5">
+          <label for="customer" class="mb-3 block text-base font-medium text-[#07074D]">
+            Klient
+          </label>
+          <input
+            type="text"
+            formControlName="customer"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+        <div class="mb-5">
+          <label for="invoiceNumber" class="mb-3 block text-base font-medium text-[#07074D]">
+            Numer i opis pozycji
+          </label>
+          <input
+            type="text"
+            formControlName="invoiceNumber"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+        <div class="mb-5">
+          <label for="type" class="mb-3 block text-base font-medium text-[#07074D]">
+            Typ
+          </label>
+          <input
+            type="text"
+            formControlName="type"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+        <div class="mb-5">
+          <label for="invoiceOwner" class="mb-3 block text-base font-medium text-[#07074D]">
+            Właściciel
+          </label>
+          <input
+            type="text"
+            formControlName="invoiceOwner"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+        <div class="mb-5">
+          <label for="caseNumber" class="mb-3 block text-base font-medium text-[#07074D]">
+            Numer Zadania
+          </label>
+          <input
+            type="text"
+            formControlName="caseNumber"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+        <div class="mb-5">
+          <label for="income" class="mb-3 block text-base font-medium text-[#07074D]">
+            Przychód
+          </label>
+          <input
+            type="number"
+            formControlName="income"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+        <div class="mb-5">
+          <label for="timeConsuming" class="mb-3 block text-base font-medium text-[#07074D]">
+            Czasochłonność
+          </label>
+          <input
+            type="number"
+            formControlName="timeConsuming"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+        <div class="mb-5">
+          <label for="drive" class="mb-3 block text-base font-medium text-[#07074D]">
+            Dojazd
+          </label>
+          <input
+            type="number"
+            formControlName="drive"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+        <div class="mb-5">
+          <label for="month" class="mb-3 block text-base font-medium text-[#07074D]">
+            Data
+          </label>
+          <input
+            type="number"
+            formControlName="month"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+        <div class="mb-5">
+          <label for="invoiceStatus" class="mb-3 block text-base font-medium text-[#07074D]">
+            Status Faktury
+          </label>
+          <input
+            type="text"
+            formControlName="invoiceStatus"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>        <div class="flex items-center justify-center">
           <button
             type="submit"
             class="bg-[#6A64F1] py-3 px-8 rounded-md text-white font-medium hover:bg-[#5C59E7] transition duration-300 btn"
@@ -10,10 +108,7 @@
             Zaktualizuj dokument
           </button>
           <div class="mx-4"></div>
-          <button
-            (click)="RedirectToUserGrid()"
-            class="bg-[#6A64F1] py-3 px-8 rounded-md text-white font-medium hover:bg-[#5C59E7] transition duration-300 btn"
-          >
+          <button (click)="RedirectToUserGrid()" class="bg-[#6A64F1] py-3 px-8 rounded-md text-white font-medium hover:bg-[#5C59E7] transition duration-300 btn">
             Wróć
           </button>
         </div>

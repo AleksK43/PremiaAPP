@@ -11,17 +11,16 @@ export class DocumentsService {
   private url = "Documents";
   constructor(private http: HttpClient) { }
 
-  public getAllDocuments(): Observable<Documents[]>
-  {
+  public getAllDocuments(): Observable<Documents[]> {
     return this.http.get<Documents[]>(`${environment.apiUrl}/${this.url}`);
   }
 
   getDocument(id: string): Observable<Documents> {
-    return this.http.get<Documents>(`/api/documents/${id}`);
+    return this.http.get<Documents>(`${environment.apiUrl}/${this.url}/${id}`);
   }
 
-  updateDocument(document: Documents): Observable<void> {
-    return this.http.put<void>(`/api/documents/${document.id}`, document);
+  updateDocument(id: string, data: any): Observable<any> {
+    return this.http.put(`https://localhost:7213/api/Documents/${id}`, data);
   }
 
 }
