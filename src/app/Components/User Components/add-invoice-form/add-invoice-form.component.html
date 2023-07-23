@@ -32,14 +32,10 @@
         />
       </div>
       <div class="mb-5">
-        <label for="invoiceOwner" class="mb-3 block text-base font-medium text-[#07074D]">
-          Właściciel
-        </label>
-        <input
-          type="text"
-          formControlName="invoiceOwner"
-          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-        />
+      <label for="invoiceOwner" class="mb-3 block text-base font-medium text-[#07074D]">Właściciel</label>
+      <select formControlName="invoiceOwner" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
+      <option *ngFor="let user of users" [value]="user.id">{{ user.userName }}</option>
+      </select>
       </div>
       <div class="mb-5">
         <label for="caseNumber" class="mb-3 block text-base font-medium text-[#07074D]">
@@ -102,7 +98,7 @@
         />
       </div>
       <div class="flex items-center justify-center">
-        <button
+        <button 
           type="submit"
           class="bg-[#6A64F1] py-3 px-8 rounded-md text-white font-medium hover:bg-[#5C59E7] transition duration-300 btn"
         >
