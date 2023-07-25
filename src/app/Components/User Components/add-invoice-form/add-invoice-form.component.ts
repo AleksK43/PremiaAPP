@@ -11,12 +11,11 @@ import { NgToastService } from 'ng-angular-popup';
   templateUrl: './add-invoice-form.component.html',
   styleUrls: ['./add-invoice-form.component.css']
 })
-
 export class AddInvoiceFormComponent implements OnInit {
   documentForm!: FormGroup;
   users: Users[] = [];
 
-constructor(
+  constructor(
     private formBuilder: FormBuilder,
     private documentCreateService: DocumentCreateService,
     private userService: UsersService,
@@ -25,7 +24,7 @@ constructor(
   ) {}
 
   ngOnInit() {
-    this.loadUsers(); 
+    this.loadUsers();
     this.documentForm = this.formBuilder.group({
       customer: ['', Validators.required],
       invoiceNumber: ['', Validators.required],
@@ -35,8 +34,19 @@ constructor(
       income: ['', Validators.required],
       timeConsuming: ['', Validators.required],
       drive: ['', Validators.required],
+      month: ['', Validators.required],
       invoiceStatus: ['', Validators.required],
     });
+  }
+
+  onChangeInvoiceOwnerEvent(event: Event): void {
+    const selectElement = event.target as HTMLSelectElement;
+    this.onChangeInvoiceOwner(selectElement ? selectElement.value : '');
+  }
+
+  onChangeInvoiceOwner(value: string): void {
+    // 
+    console.log('Invoice owner changed:', value);
   }
 
   loadUsers() {
@@ -50,7 +60,6 @@ constructor(
     );
   }
 
-
   addDocument() {
     console.log('addDocument called');
     if (this.documentForm.invalid) {
@@ -58,6 +67,7 @@ constructor(
 
       for (const field in this.documentForm.controls) {
         if (this.documentForm.controls[field].invalid) {
+          this.toast.error({detail: `pole ${field} zawiera niepoprawne dane`, summary: "", duration:5000})
           console.log(`Field ${field} is invalid`);
         }
       }
@@ -78,9 +88,7 @@ constructor(
     );
   }
 
-
-  RedirectToUserGrid()
-  {
+  RedirectToUserGrid() {
     this.router.navigate(['UserView'])
   }
 }

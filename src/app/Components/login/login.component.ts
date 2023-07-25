@@ -15,7 +15,11 @@ export class LoginComponent implements OnInit {
   isText: boolean = false;
   loginForm!: FormGroup;
 
-  constructor(private userStore: UserStoreService, private router: Router, private auth: AuthService, private fb: FormBuilder,private toast: NgToastService) {}
+  constructor(private userStore: UserStoreService,
+     private router: Router,
+      private auth: AuthService,
+      private fb: FormBuilder,
+      private toast: NgToastService) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
