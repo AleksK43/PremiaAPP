@@ -24,4 +24,5 @@ constructor() { }
   public setFullNameFromStore(fullname : string){
     this.unique_name$.next(fullname); 
   }
+
 }

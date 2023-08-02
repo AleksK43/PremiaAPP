@@ -48,7 +48,7 @@ export class AuthService {
       return jwtHelper.decodeToken(token)
     }
 
-    getNameFromTokejn()
+    getNameFromToken()
     {
        if(this.userPayload)
        {
@@ -63,6 +63,15 @@ export class AuthService {
         return this.userPayload.role; 
       }
     }
+
+
+      getGuidFromToken(){
+        if(this.userPayload )
+          {
+            return this.userPayload.user_id
+          }
+      }
+    
 
    }
 

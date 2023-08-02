@@ -20,7 +20,7 @@ export class SupervisorViewComponent {
   ngOnInit() {
     this.store.getFullNameFromStore()
     .subscribe(val=> {
-      let fullNameFromToken = this.auth.getNameFromTokejn(); 
+      let fullNameFromToken = this.auth.getNameFromToken(); 
       this.unique_name = val || fullNameFromToken
       this.selectedComponent ="supervisor-view";
 

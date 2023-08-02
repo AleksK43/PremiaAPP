@@ -8,12 +8,15 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class UsersService {
-private url = "User"; 
+  private url = "User"; 
   constructor(private http: HttpClient) {  }
 
   public getUsers(): Observable<Users[]>
   {
-   
     return this.http.get<Users[]>(`${environment.apiUrl}/${this.url}`);
+  }
+  
+  public getUserById(userId: number): Observable<Users> {
+    return this.http.get<Users>(`${environment.apiUrl}/${this.url}/${userId}`);
   }
 }

@@ -15,8 +15,8 @@ export class DocumentsService {
     return this.http.get<Documents[]>(`${environment.apiUrl}/${this.url}`);
   }
 
-  getDocument(id: string): Observable<Documents> {
-    return this.http.get<Documents>(`${environment.apiUrl}/${this.url}/${id}`);
+  public getDocument(id: string): Observable<Documents> {
+    return this.http.get<Documents>(`${environment.apiUrl}/${this.url}/single/${id}`);
   }
 
   updateDocument(id: string, data: any): Observable<any> {
