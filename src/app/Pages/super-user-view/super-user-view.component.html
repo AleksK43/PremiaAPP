@@ -5,11 +5,11 @@
     <li class="font-medium text-sm p-3 hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-primary">
       <button class="dark:text-white" (click)="changeComponent('Users')">Uzytkownicy</button>
     </li>
-    <li class="font-medium text-sm p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white">Klienci</a>
+    <li class="font-medium text-sm p-3 hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-primary">
+      <button class="dark:text-white" (click)="changeComponent('Customers')">Klienci</button>
     </li>
-    <li class="font-medium text-sm p-3 cursor-pointer hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-gray-600 hover:text-primary transition-colors">
-      <a href="#" class="dark:text-white">Panel Admina</a>
+    <li class="font-medium text-sm p-3 hover:bg-slate-300 dark:hover:bg-slate-800 sm:p-0 sm:hover:bg-transparent text-primary">
+      <button class="dark:text-white" (click)="changeComponent('AdminPanel')">Panel Admina</button>
     </li>
   </ul>
   <div class="flex gap-3 items-center"><h1 class = "text-gray-200">Witaj, {{unique_name}}</h1>
@@ -53,6 +53,31 @@
     </div>
   </div>
 </nav>
+
+<ng-container *ngIf="selectedComponent === 'AdminPanel'">
+  <div class="flex flex-col h-screen">
+    <div class="bg-gray-200 flex-grow">
+    </div>
+    <div class="bg-gray-300 flex-grow">
+      Test
+    </div>
+    <div class="bg-gray-400 flex-grow">
+    </div>
+  </div>
+  </ng-container>
+
+<ng-container *ngIf="selectedComponent === 'Customers'">
+  <div class="flex flex-col h-screen">
+    <div class="bg-gray-200 flex-grow">
+    </div>
+    <div class="bg-gray-300 flex-grow">
+      <app-customer></app-customer>
+    </div>
+    <div class="bg-gray-400 flex-grow">
+    </div>
+  </div>
+  </ng-container>
+
 <ng-container *ngIf="selectedComponent === 'Users'">
 <div class="flex flex-col h-screen">
   <div class="bg-gray-200 flex-grow">
